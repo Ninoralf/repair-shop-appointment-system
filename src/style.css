@@ -1,0 +1,112 @@
+* {
+    text-decoration: none;
+}
+
+.navbar {
+    background: white;
+    font-family: 'DM Sans', sans-serif;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.navbar-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-logo a {
+    font-size: 30px;
+    font-weight: 400;
+    color: black;
+}
+
+.navbar-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    grid-column: 2;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar-menu li a {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+    color: #000000;
+}
+
+.navbar-menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #000000;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-menu li a:hover::after {
+    width: 80%;
+}
+
+.navbar-auth {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.auth-btn {
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border-radius: 24px;
+    transition: background-color 0.3s ease;
+}
+
+.auth-btn:hover {
+    background-color: #004782;
+}
+
+.auth-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+/* HERO SECTION - ONLY NEW STYLES */
+.hero-section {
+    text-align: center;
+    padding: 80px 15px;
+}
+
+.hero-section h1 {
+    font-family: 'Crimson Text', serif;
+    font-size: clamp(4rem, 10vw, 7rem);
+    font-weight: 500;
+    color: #000000;
+    margin: 0;
+    line-height: 1.1;
+}
