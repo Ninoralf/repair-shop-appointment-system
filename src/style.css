@@ -110,7 +110,7 @@ li {
 
 .hero-section {
     text-align: center;
-    padding: 80px 15px;
+    padding: 0px 15px 80px 15px;
 }
 
 .hero-section h1 {
@@ -135,7 +135,7 @@ li {
     display: block;
     margin: 60px auto 40px;
     width: min(90vw, 700px);
-    height: 500px;
+    height: 450px;
 }
 
 .hero-image {
@@ -153,8 +153,8 @@ li {
     letter-spacing: -3%;
     color: #000000;
     font-weight: 100;
-    margin: 40px 15px 40px 15px;
-    text-align: left;
+    margin: 40px 15px 200px 15px;
+    text-align: center;
     width: 100%;
 }
 
@@ -187,4 +187,45 @@ li {
     margin: 0;
     text-align: center;
     width: auto;
+}
+
+.drop-off-device {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin: 400px 60px 200px 60px;
+}
+
+.drop-off-device h2 {
+    font-family: 'Crimson Text', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    color: #000000;
+    margin: 0 0 40px 0;
+    line-height: 1.2;
+}
+
+.drop-off-device p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #000000;
+    margin: 0;
+    line-height: 1.5;
+    padding-top: 20px;
+    width: 500px;
+}
+
+.drop-off-images {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.drop-off-images img {
+    width: 420px;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 20px;
 }
