@@ -218,14 +218,14 @@ li {
 
 .drop-off-images {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     justify-content: flex-end;
     margin-left: auto;
 }
 
 .drop-off-images img {
-    width: 420px;
-    height: 480px;
+    width: 500px;
+    height: 600px;
     object-fit: cover;
     border-radius: 20px;
 }
