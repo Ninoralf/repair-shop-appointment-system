@@ -27,8 +27,7 @@
 .navbar-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    position: relative;
 }
 
 .navbar-logo-img {
@@ -38,11 +37,12 @@
 
 .navbar-menu {
     display: flex;
-    justify-content: center;
     list-style: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
-    grid-column: 2;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 li {
@@ -80,34 +80,6 @@ li {
     width: 80%;
 }
 
-.navbar-auth {
-    display: flex;
-    gap: 10px;
-    flex-shrink: 0;
-}
-
-.auth-btn {
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 600;
-    cursor: pointer;
-    background-color: #00C5FF;
-    color: white;
-    border-radius: 24px;
-    transition: background-color 0.3s ease;
-}
-
-.auth-btn:hover {
-    background-color: #01428E;
-}
-
-.auth-btn a {
-    color: white;
-    text-decoration: none;
-}
-
 .hero-section {
     text-align: center;
     padding: 0px 15px 80px 15px;
@@ -131,29 +103,53 @@ li {
     line-height: 1.1;
 }
 
-.hero-image-container {
-    display: block;
-    margin: 60px auto 40px;
-    width: min(90vw, 700px);
-    height: 450px;
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    margin: 60px 0 40px 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-.hero-image {
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll 20s linear infinite;
+    width: max-content;
+}
+
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+.carousel-slide {
+    flex-shrink: 0;
+    width: 400px;
+    height: 280px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.carousel-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
-    display: block;
 }
 
-.hero-section p {
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.hero-section > p {
     font-family: 'Crimson Text', serif;
     font-size: 40px;
     line-height: 90%;
     letter-spacing: -3%;
     color: #000000;
     font-weight: 100;
-    margin: 40px 15px 200px 15px;
+    margin: 100px 15px 200px 15px;
     text-align: center;
     width: 100%;
 }
@@ -228,4 +224,62 @@ li {
     height: 600px;
     object-fit: cover;
     border-radius: 20px;
+}
+
+.branch-card {
+    position: relative;
+    width: 500px;
+    height: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+    display: block;
+}
+
+.branch-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.branch-card:hover img {
+    transform: scale(1.05);
+}
+
+.branch-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+    border-radius: 0 0 20px 20px;
+    text-align: left;
+}
+
+.branch-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.branch-address {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: white !important;
+    margin: 0 !important;
+    line-height: 1.5;
+    width: 100% !important;
+    padding: 0 !important;
+    font-size: 15px !important;
 }
